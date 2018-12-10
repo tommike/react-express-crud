@@ -1,18 +1,18 @@
 # react-express-js-tasks
 
-**run Server first:**
+**Run Server:**
 
 cd server  
 nmp install  
 npm start 
 
-**once server is running, run Client (React app):**
+**Once server is running, run Client (React app):**
 
 cd client  
 npm install  
 npm start 
 
-**run unit tests:**
+**Run unit tests:**
 
 cd client  
 npm run test
