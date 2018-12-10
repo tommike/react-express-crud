@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "serve": "nodemon server"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.7"
+  }
+}
