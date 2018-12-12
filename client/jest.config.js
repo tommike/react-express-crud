@@ -1,5 +1,4 @@
 module.exports = {
-  "preset": "jest-puppeteer",
   verbose: false,
   onlyChanged: true,
   clearMocks: true,

@@ -4,7 +4,8 @@
   "description": "fliit",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll --verbose --bail",
+    "test": "jest --watchAll --verbose --bail --config=jest.config.js",
+    "test:puppeteer": "jest --watchAll --verbose --bail --config=jest.config.puppeteer.js",
     "test:update": "jest --updateSnapshot",
     "start": "webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack --progress --profile --verbose --bail ",
