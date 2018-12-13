@@ -3,7 +3,6 @@ describe('<TasksForm/>', () => {
     await page.goto('http://localhost:8080/');
   });
 
-  /*
   it('page title is Client', async () => {
     await page.waitForSelector('form');
     const title = await page.title();
@@ -75,7 +74,7 @@ describe('<TasksForm/>', () => {
       options.map(option => option.value)
     );
     console.log(optionValues);
-    const expected = ['germany', 'netherlands'];//all from this array must be appear in optionValues, it will fail if any is missing
+    const expected = ['germany', 'netherlands'];// all from this array must be appear in optionValues, it will fail if any is missing
     expect(optionValues).toEqual(expect.arrayContaining(expected));
   });
 
@@ -112,10 +111,9 @@ describe('<TasksForm/>', () => {
     const errorShown = await page.$$eval('.form-feedback__text', items => items.length);
     expect(errorShown).toBe(1);
   });
-  */
 
   it('page scrolls to top of window on submit if error message is shown', async () => {
-    await page.setViewport({width: 1000, height: 500});
+    await page.setViewport({ width: 1000, height: 500 });
     await page.waitForSelector('input[name="deliveryAt"]');
 
     await page.focus('input[name="deliveryAt"]');
@@ -149,7 +147,7 @@ describe('<TasksForm/>', () => {
     expect(errorShown).toBe(1);
 
     const windowScrollOffset = await page.evaluate(() => window.scrollY);
-    expect(windowScrollOffset).toBe(100);
+    expect(windowScrollOffset).toBe(0);
   });
 
   it('page redirects to /tasks-list on submit if there are no errors', async () => {
