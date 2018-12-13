@@ -73,7 +73,7 @@ describe('<TasksForm/>', () => {
     const optionValues = await page.$$eval('select[name="country"] option', options =>
       options.map(option => option.value)
     );
-    console.log(optionValues);
+
     const expected = ['germany', 'netherlands'];// all from this array must be appear in optionValues, it will fail if any is missing
     expect(optionValues).toEqual(expect.arrayContaining(expected));
   });

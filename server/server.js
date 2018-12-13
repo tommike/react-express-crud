@@ -28,8 +28,6 @@ app.post('/tasks', (req, res) => {
 
   const { body } = req;
 
-  console.log(body)
-
   if (!body.delivery_at
        || !body.recipient
        || !body.recipient.name
