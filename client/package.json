@@ -1,7 +1,7 @@
 {
-  "name": "fliit",
+  "name": "tommike",
   "version": "1.0.0",
-  "description": "fliit",
+  "description": "tommike",
   "main": "index.js",
   "scripts": {
     "test:unit": "jest --config=jest.config.unit.js",

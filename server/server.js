@@ -64,6 +64,10 @@ app.post('/tasks', (req, res) => {
   res.status(201).json(task);
 });
 
+app.get('/tasks/clear', (req, res) => {
+  tasks = [];
+});
+
 app.get('/countries', (req, res) => {
 
   res.json(countries);

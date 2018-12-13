@@ -106,7 +106,7 @@ describe('<TasksForm/>', () => {
 
     await page.click('button[type="submit"]');
 
-    await page.waitFor(500);
+    await page.waitFor(1000);
 
     const errorShown = await page.$$eval('.form-feedback__text', items => items.length);
     expect(errorShown).toBe(1);
@@ -141,7 +141,7 @@ describe('<TasksForm/>', () => {
 
     await page.click('button[type="submit"]');
 
-    await page.waitFor(500);
+    await page.waitFor(1000);
 
     const errorShown = await page.$$eval('.form-feedback__text', items => items.length);
     expect(errorShown).toBe(1);
