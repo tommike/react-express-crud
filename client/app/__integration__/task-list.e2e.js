@@ -24,7 +24,8 @@ describe('<TaskListView/>', () => {
     await page.waitForSelector('h1');
 
     await page.evaluate(() => {
-      fetch('http://localhost:5000/tasks/clear', {// use mock server instead
+      fetch('http://localhost:5000/tasks/clear', {
+        // use mock server instead
         method: 'GET',
       });
     });
@@ -34,5 +35,4 @@ describe('<TaskListView/>', () => {
     const pageContent = await page.content();
     expect(pageContent.indexOf('No tasks found')).not.toBe(-1);
   });
-
 });
