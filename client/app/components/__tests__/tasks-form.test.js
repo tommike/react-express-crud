@@ -40,11 +40,11 @@ describe('<TaskForm />', () => {
     expect(wrapper).toHaveLength(1);
   });
 
-  it('triggers handleChange when text field is changed', async () => {
+  it('triggers handleChange when text field is changed', () => {
     const spy = jest.spyOn(TasksForm.prototype, 'handleChange');
     wrapper = mount(<TasksForm {...props} />);
 
-    await wrapper
+    wrapper
       .find('input[type="text"]')
       .at(0)
       .simulate('change', { target: { value: 'test' } });
@@ -53,12 +53,12 @@ describe('<TaskForm />', () => {
     expect(spy).toBeCalledTimes(1);
   });
 
-  it('handleChange function updates state and field value of TextField', async () => {
+  it('handleChange function updates state and field value of TextField', () => {
     wrapper = mount(<TasksForm {...props} />);
 
     const firstTextField = wrapper.find('input[type="text"]').at(0);
     const fieldName = firstTextField.props().name;
-    await firstTextField.simulate('change', { target: { name: fieldName, value: 'test' } });
+    firstTextField.simulate('change', { target: { name: fieldName, value: 'test' } });
 
     expect(
       wrapper
@@ -69,11 +69,11 @@ describe('<TaskForm />', () => {
     expect(wrapper.state()[fieldName]).toBe('test');
   });
 
-  it('triggers handleChange when <select> field is changed', async () => {
+  it('triggers handleChange when <select> field is changed', () => {
     const spy = jest.spyOn(TasksForm.prototype, 'handleChange');
     wrapper = mount(<TasksForm {...props} />);
 
-    await wrapper
+    wrapper
       .find('select')
       .at(0)
       .simulate('change', { target: { value: 'test' } });
@@ -82,12 +82,12 @@ describe('<TaskForm />', () => {
     expect(spy).toBeCalledTimes(1);
   });
 
-  it('handleChange function updates state and value of SelectField', async () => {
+  it('handleChange function updates state and value of SelectField', () => {
     wrapper = mount(<TasksForm {...props} />);
 
     const firstTextField = wrapper.find('select').at(0);
     const fieldName = firstTextField.props().name;
-    await firstTextField.simulate('change', { target: { name: fieldName, value: 'spain' } });
+    firstTextField.simulate('change', { target: { name: fieldName, value: 'spain' } });
 
     expect(
       wrapper
@@ -140,7 +140,7 @@ describe('<TaskForm />', () => {
     expect(wrapper.find('button[type="submit"]').props().disabled).toBe(false);
   });
 
-  it('handleSubmit dispatches data in correct object shape', async () => {
+  it('handleSubmit dispatches data in correct object shape', () => {
     const spy = jest.spyOn(tasks, 'handleAddTask');
     wrapper = mount(<TasksForm {...props} />);
 
@@ -175,7 +175,7 @@ describe('<TaskForm />', () => {
       .find('input[name="phone"]')
       .simulate('change', { target: { value: postData.recipient.phone, name: 'phone' } });
 
-    await wrapper.find('form').simulate('submit', { preventDefault: () => {} });
+    wrapper.find('form').simulate('submit', { preventDefault: () => {} });
 
     expect(spy).toBeCalledWith(postData, wrapper.instance().afterSubmit);
   });
